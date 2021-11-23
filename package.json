@@ -25,13 +25,14 @@
     "gatsby-plugin-sharp": "^4.2.0",
     "gatsby-plugin-styled-components": "^5.2.0",
     "gatsby-source-filesystem": "^4.2.0",
+    "gatsby-transformer-sharp": "^4.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@graphql-cli/codegen": "2.1.5",
     "@types/styled-components": "^5.1.15",
-    "graphql-cli": "4.1.0",
-    "@graphql-cli/codegen": "2.1.5"
+    "graphql-cli": "4.1.0"
   }
 }
