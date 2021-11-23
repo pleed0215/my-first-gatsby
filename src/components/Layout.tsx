@@ -1,40 +1,39 @@
-import * as React from 'react'
-import {graphql, Link, useStaticQuery} from 'gatsby'
-import styled from "styled-components"
+import * as React from 'react';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import styled from 'styled-components';
 
 const Container = styled.div`
-  margin: auto;
-  max-width: 500px;
-  font-family: sans-serif;
+    margin: auto;
+    max-width: 500px;
+    font-family: sans-serif;
 
-  .heading {
-    color: rebeccapurple;
-  }
+    .heading {
+        color: rebeccapurple;
+    }
 
-  .nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-  }
+    .nav-links {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
 
-  .nav-link-item {
-    padding-right: 2rem;
-  }
+    .nav-link-item {
+        padding-right: 2rem;
+    }
 
-  .nav-link-text {
-    color: black;
-  }
+    .nav-link-text {
+        color: black;
+    }
 
-  .site-title {
-    font-size: 3rem;
-    color: gray;
-    font-weight: 700;
-    margin: 3rem 0;
-  } 
-`
+    .site-title {
+        font-size: 3rem;
+        color: gray;
+        font-weight: 700;
+        margin: 3rem 0;
+    }
+`;
 
-
-const Layout = ({pageTitle, children}) => {
+const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -48,8 +47,12 @@ const Layout = ({pageTitle, children}) => {
     `);
     return (
         <Container>
-            <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-            <header>{data.site.siteMetadata.title}</header>
+            <title>
+                {pageTitle} | {data.site.siteMetadata.title}
+            </title>
+            <header className={'site-title'}>
+                {data.site.siteMetadata.title}
+            </header>
             <nav>
                 <ul className="navLinks">
                     <li className="navLinkItem">
@@ -74,6 +77,6 @@ const Layout = ({pageTitle, children}) => {
                 {children}
             </main>
         </Container>
-    )
-}
-export default Layout
+    );
+};
+export default Layout;
